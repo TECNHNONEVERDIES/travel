@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: turquoise;
+            }
+
+            h1{
+                text-align : center ;
+                font-family : comic sans ms ;
+            }
+
+            .shinchan {
+                position : relative ;
+            }
+
+            .shinchan span{
+                position : absolute ;
+                display : inline-block ;
+                top : 15px ;
+                right : 200px ;
+                font-size : 20px ;
+            }
+
+            .chanshin {
+                display : none ;
+            }
+        </style>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+        </script>
+        <script>
+            $(function(){
+                $(".shinchan").click(function(){
+                    var $answer = $(this).find(".chanshin");
+
+                    if($answer.hasClass("open")){
+                        $answer.removeClass("open");
+                        $answer.slideUp();
+                        $(this).find("span").text("+");
+                    }
+                    else{
+                        $answer.addClass("open");
+                        $answer.slideDown();
+                        $(this).find("span").text("-")
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>
+            Frequently Asked Questions
+        </h1>
+        <div>
+            <ul>
+                <li class = "shinchan"> <h2> Lightning Mcqueen </h2> <span>+</span> <div class = "chanshin"> Thunder Mcdonalds </div> </li>
+                <li class = "shinchan"> <h2> Doraemon </h2> <span>+</span> <div class = "chanshin"> Nobita </div> </li>
+                <li class = "shinchan"> <h2> Sujata Iyer </h2> <span>+</span> <div class = "chanshin"> Iyer Sujata </div> </li>
+            </ul>
+        </div>
+    </body>
+</html>
